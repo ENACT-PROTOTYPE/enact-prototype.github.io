@@ -1,0 +1,1 @@
+FB.init({appId:EDDSlgFbInit.app_id,status:true,cookie:true,xfbml:true,oauth:true});
