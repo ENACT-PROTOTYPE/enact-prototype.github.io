@@ -1,1 +1,3 @@
-prototype 1
+---
+permalink: /index.html
+---
