@@ -14,9 +14,9 @@
 .col-in li.col-side {
     width: 95%;
 }
-tag.{
+.tag{
     display:none;
 }
-.white-box:hover tag.{
+.white-box:hover .tag{
     display:inline-block;
 }
