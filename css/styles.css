@@ -112,3 +112,9 @@ div.wpcf7 input[type="file"]:disabled {
 div.wpcf7 .wpcf7-submit:disabled {
 	cursor: not-allowed;
 }
+.tag{
+	display:none;
+}
+div.white-box:hover .tag{
+	display:inline;
+}
