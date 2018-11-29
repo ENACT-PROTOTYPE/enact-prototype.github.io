@@ -17,7 +17,7 @@
 .tag{
     display:none;
 }
-.div:hover .tag{
+div:hover .tag{
     display:inline-block;
 }
 body{
