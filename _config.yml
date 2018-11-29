@@ -12,13 +12,13 @@ name: ENACT
 # Includes an icon in the footer for each username you enter
 footer-links:
   #dribbble:
-  email:
+  #email:
   #facebook:
   #flickr:
-  github: islandstream
+  #github: islandstream
   #instagram:
-  linkedin: ana-weller-71184090
-  pinterest: anaeweller
+  #linkedin: ana-weller-71184090
+  #pinterest: anaeweller
   #rss: # just type anything here for a working RSS icon
   #twitter: jekyllrb
   #stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
