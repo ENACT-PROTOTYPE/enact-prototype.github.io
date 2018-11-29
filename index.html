@@ -1,506 +1,293 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+---
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>ENACT Prototype for all ON/OFF modifications</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Menu CSS -->
-    <link href="css/sidebar-nav.min.css" rel="stylesheet">
-    <!-- toast CSS -->
-    <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
-    <!-- morris CSS -->
-    <link href="css/morris.css" rel="stylesheet">
-    <!-- chartist CSS -->
-    <link href="css/chartist.min.css" rel="stylesheet">
-    <link href="css/chartist-plugin-tooltip.css" rel="stylesheet">
-    <!-- Calendar CSS -->
-    <link href="css/fullcalendar.css" rel="stylesheet">
-    <!-- animation CSS -->
-    <link href="css/animate.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- color CSS -->
-    <link href="css/megna-dark.css" id="theme" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
+<!-- ============================================================== -->
+<!-- Different data widgets -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <div class="row row-in">
+                <div>
+                    <ul class="col-in">
+                        <li class="col-lg-1 col-sm-1">
+                            <span class="circle circle-md bg-danger"><i class="ti-clipboard"></i></span>
+                        </li>
+                        <li  class="col-lg-11 col-sm-11">
+                            <p>Audit Criteria</p>
+                            <h4>Adults with type 2 diabetes whose HbA1c level is 58mmol/mol 7.5% or above after 6 months with single-drug treatment are offered dual therapy.</h4>
+                        </li>
+                    </ul>
+                </div>
 
-<body class="fix-header">
-    <!-- ============================================================== -->
-    <!-- Preloader -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <svg class="circular" viewbox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-        </svg>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Wrapper -->
-    <!-- ============================================================== -->
-    <div id="wrapper">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav">
-                <div class="sidebar-head">
-                    <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
-                <ul class="nav" id="side-menu">
-                    <li class="user-pro">
-                        <a href="javascript:void(0)" class="waves-effect"><img src="images/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> Steve Gection<span class="fa arrow"></span></span>
-                        </a>
-                        <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-                            <li><a href="javascript:void(0)"><i class="ti-user"></i> <span class="hide-menu">My Profile</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-wallet"></i> <span class="hide-menu">My Balance</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-email"></i> <span class="hide-menu">Inbox</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> <span class="hide-menu">Account Setting</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> <span class="hide-menu">Logout</span></a></li>
-                        </ul>
-                    </li>
-                    <li> <a href="javascript:void(0)" class="waves-effect active"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span class="hide-menu"> ENACT <span class="fa arrow"></span> <span class="label label-rouded label-inverse pull-right">4</span></span></a>
-                        <!--<ul class="nav nav-second-level">
-                            <li> <a href="index.html"><i class=" fa-fw">1</i><span class="hide-menu">Dashboard 1</span></a> </li>
-                            <li> <a href="index2.html"><i class=" fa-fw">2</i><span class="hide-menu">Dashboard 2</span></a> </li>
-                            <li> <a href="index3.html"><i class=" fa-fw">3</i><span class="hide-menu">Dashboard 3</span></a> </li>
-                        </ul>-->
-                    </li>
-                    <li class="active">
-                      <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-flash fa-fw" data-icon="v"></i> <span class="hide-menu">Modifications On <span class="fa arrow"></span> </span></a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0)" class="waves-effect "><i class="mdi mdi-flash-off fa-fw"></i> <span class="hide-menu">Modifications Off<span class="fa arrow"></span><span class="label label-rouded label-warning pull-right">30</span></span></a>
-                    </li>
-                </ul>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page Content -->
-        <!-- ============================================================== -->
-        <div id="page-wrapper">
-            <div class="container">
-                <div class="row bg-title">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">National Diabetes Audit</h4> </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <a href="" target="_blank" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Next</a>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /.row -->
-                <!-- ============================================================== -->
-                <!-- Different data widgets -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <div class="row row-in">
-                                <div>
-                                    <ul class="col-in">
-                                        <li class="col-lg-1 col-sm-1">
-                                            <span class="circle circle-md bg-danger"><i class="ti-clipboard"></i></span>
-                                        </li>
-                                        <li  class="col-lg-11 col-sm-11">
-                                            <p>Audit Criteria</p>
-                                            <h4>Adults with type 2 diabetes whose HbA1c level is 58mmol/mol 7.5% or above after 6 months with single-drug treatment are offered dual therapy.</h4>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--row -->
-                <!-- /.row -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                        <div class="white-box">
-                            <h3 class="box-title">RESULTS</h3><span class="label label-danger label-rounded pull-right">#7 (Comparators)</span>
-                            <h4>Your practice achieved this standard of care for <strong>86% (318/370) of patients</strong>.</h4>
-                            <ul class="list-inline text-right col-md-7 col-lg-7 col-sm-12 col-xs-12">
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Top quartile</h5>
-                                </li>
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5 text-danger"></i>Your practice</h5>
-                                </li>
-                            </ul>
-                            <img src="images/top-quartile.png" alt="Smiley face" height="285">
-                            <span class="label label-danger label-rounded pull-right">#9 (Feedback in more than one way)</span>
-                            <h4>This chart shows your performance in comparison with other general practices.</h4>
-                        </div>
-                    </div>
-                    <!--<div class="col-md-6 col-sm-6 col-lg-3 col-xs-12">
-                        <div class="bg-theme white-box m-b-0">
-                            <ul class="expense-box">
-                                <li><i class="wi wi-day-cloudy text-white"></i>
-                                    <div>
-                                        <h1 class="text-white m-b-0">35<sup>o</sup></h1>
-                                        <h4 class="text-white">Clear and sunny</h4>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div id="ct-weather" style="height: 120px"></div>
-                            <ul class="dp-table text-white">
-                                <li>05 AM</li>
-                                <li>10 AM</li>
-                                <li>03 PM</li>
-                                <li>08 PM</li>
-                            </ul>
-                        </div>
-                        <div class="white-box">
-                            <div class="row">
-                                <div class="col-xs-8">
-                                    <h2 class="m-b-0 font-medium">Sunday</h2>
-                                    <h5 class="text-muted m-t-0">March 2017</h5>
-                                </div>
-                                <div class="col-xs-4">
-                                    <div class="circle circle-md bg-success pull-right m-t-10"><i class="wi wi-day-sunny"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
-                </div>
-                <!-- ============================================================== -->
-                <!-- wallet, & manage users widgets -->
-                <!-- ============================================================== -->
-                <!-- .row -->
-                <div class="row">
-                    <!-- col-md-12 -->
-                    <div class="col-md-12 col-lg-12">
-                        <div class="manage-users">
-                          <span class="label label-danger label-rounded pull-right">#12 (actionable messages/optional detail)</span>
-                            <div class="sttabs tabs-style-iconbox">
-                                <nav>
-                                    <ul>
-                                        <li title="All-cause mortality risk increases with increasing baseline levels of HbA1c" data-toggle="tooltip" data-placement="top"><a href="#section-iconbox-3" class="sticon ti-receipt"><span>Targets</span></a></li>
-                                        <li title="People with type 2 diabetes and HbA1c level of 58mmol/mol or above" data-toggle="tooltip" data-placement="top"><a title="View Therapies for this patient" data-toggle="tooltip" data-placement="top" href="#section-iconbox-1" class="sticon ti-user"><span>Patients</span></a></li>
-                                        <li title="Drug options for dual therapy if the HbA1c level is 58mmol/mol or above" data-toggle="tooltip" data-placement="top"><a href="#section-iconbox-2" class="sticon ti-lock"><span>Therapies</span></a></li>
-                                    </ul>
-                                </nav>
-                                <div class="content-wrap">
-                                  <section id="section-iconbox-3">
-                                    <div class="p-20 row">
-                                        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                                            <h3 class="m-t-0">All-cause mortality risk increases with increasing baseline levels of HbA1c.</h3>
-                                        </div>
-                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                                            <a href="#section-iconbox-1" title="Needs to link to patient list" data-toggle="tooltip" data-placement="top" target="_blank" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">View at risk patients</a>
-                                        </div>
-                                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                                          <ul class="dp-table m-t-30">
-                                            <li style="display:block; text-align:left"><a href="" class="circle circle-md bg-warning di" data-toggle="tooltip" title="" data-original-title="More">48+</a> mmol/mol HbA1c levels risk for <strong>microvascular complications</strong> increases significantly</li></br>
-                                            <li style="display:block; text-align:left"><a href="" class="circle circle-md bg-danger di" data-toggle="tooltip" title="" data-original-title="More">53+</a> mmol/mol HbA1c levels risk for <strong>mortality and macrovascular complications</strong> increases significantly</li>
-                                          </ul>
-                                        </div>
-                                    </div>
-                                  </section>
-                                    <section id="section-iconbox-1">
-                                      <div class="p-20 row">
-                                            <div class="col-sm-12">
-                                                <h3 class="m-t-0">People with type 2 diabetes and HbA1c level of 58mmol/mol or above</h3>
-                                            </div>
-                                        </div>
-                                        <div class="table-responsive manage-table">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>NAME</th>
-                                                        <th>NHS Number</th>
-                                                        <th>Last HbA1c level</th>
-                                                        <th>Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="advance-table-row">
-                                                        <td><a href="#" title="View Therapies for this patient" data-toggle="tooltip" data-placement="top">Andrew Simons</a></td>
-                                                        <td>434 897 2136</td>
-                                                        <td>69</td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
-                                                          Patient details
-                                                        </button></td>
-                                                    </tr>
-                                                    <tr class="advance-table-row">
-                                                        <td><a href="#">Hanna Gover</a></td>
-                                                        <td>434 765 3241</td>
-                                                        <td>76</td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal2">
-                                                          Patient details
-                                                        </button></td>
-                                                    </tr>
-                                                    <tr class="advance-table-row">
-                                                        <td><a href="#" title="View Therapies for this patient" data-toggle="tooltip" data-placement="top">Joshi Nirav</a></td>
-                                                        <td>434 456 1101</td>
-                                                        <td>72</td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal3">
-                                                          Patient details
-                                                        </button></td>
-                                                    </tr>
-                                                    <tr class="advance-table-row">
-                                                        <td><a href="#" title="View Therapies for this patient" data-toggle="tooltip" data-placement="top">Joshi Sunil</a></td>
-                                                        <td>434 456 1101</td>
-                                                        <td>65</td>
-                                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal4">
-                                                          Patient details
-                                                        </button></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <!-- ============================================================== -->
-                                            <!-- Patient info modals -->
-                                            <!-- ============================================================== -->
-                                            <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                  <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Andrew Simons</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                      <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                  </div>
-                                                  <div class="modal-body">
-                                                    <img src="images/patient-info.png" alt="patient info">
-                                                  </div>
-                                                  <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                  <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Hanna Gover</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                      <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                  </div>
-                                                  <div class="modal-body">
-                                                    <img src="images/patient-info.png" alt="patient info">
-                                                  </div>
-                                                  <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Joshi Nirav</button>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                  <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Joshi Sunil</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                      <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                  </div>
-                                                  <div class="modal-body">
-                                                    <img src="images/patient-info.png" alt="patient info">
-                                                  </div>
-                                                  <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="modal fade" id="Modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                  <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                      <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                  </div>
-                                                  <div class="modal-body">
-                                                    <img src="images/patient-info.png" alt="patient info">
-                                                  </div>
-                                                  <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section id="section-iconbox-2">
-                                        <div class="p-20 row">
-                                            <div class="col-sm-12">
-                                                <h3 class="m-t-0">Drug options for dual therapy if the HbA1c level is 58mmol/mol or above</h3>
-                                            </div>
-                                        </div>
-                                        <div class="table-responsive manage-table">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Metformin combinations</th>
-                                                        <th>Other (Metaformin intolerant/contraindicated)</th>
-                                                        <th>No. of Patients</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="advance-table-row">
-                                                        <td>Metformin plus a gliptin</td>
-                                                        <td>A gliptin plus pioglitazone</td>
-                                                        <td>1<a href="" title="Go to patient list">View patient(s)</a></td>
-                                                    </tr>
-                                                    <tr class="advance-table-row">
-                                                        <td>Metformin plus pioglitazone</td>
-                                                        <td>A gliptin plus a sulfonylurea</td>
-                                                        <td>1<a href="" title="Go to patient list">View patient(s)</a></td>
-                                                    </tr>
-                                                    <tr class="advance-table-row">
-                                                        <td>Metformin plus a sulfonylurea</td>
-                                                        <td>Pioglitazone plus a sulfonylurea</td>
-                                                        <td>2<a href="" title="Go to patient list">View patient(s)</a></td>
-                                                    </tr>
-                                                    <tr class="advance-table-row">
-                                                        <td>Metformin plus a Sodium-glucose <br />co-transporter 2 inhibitor (SGLT-2i)</td>
-                                                        <td>An SGLT-2i instead of a gliptin if  <br />a sulfonylurea or pioglitazone is not appropriate</td>
-                                                        <td>1<a href="" title="Go to patient list">View patient(s)</a></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </section>
-                                </div>
-                                <!-- /content -->
-                            </div>
-                            <!-- /tabs -->
-                        </div>
-                    </div>
-                    <!-- /col-md-12 -->
-                </div>
-                <!-- /.row -->
-                <!-- ============================================================== -->
-                <!-- start right sidebar -->
-                <!-- ============================================================== -->
-                <div class="right-sidebar">
-                    <div class="slimscrollright">
-                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-                        <div class="r-panel-body">
-                            <ul id="themecolors" class="m-t-20">
-                                <li><b>With Light sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                                <li><a href="javascript:void(0)" data-theme="gray" class="yellow-theme">3</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                                <li class="full-width"><b>With Dark sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-                                <li><a href="javascript:void(0)" data-theme="gray-dark" class="yellow-dark-theme">9</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme working">12</a></li>
-                            </ul>
-                            <ul class="m-t-20 chatonline">
-                                <li><b>Chat option</b></li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="images/varun.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="images/genu.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="images/ritesh.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="images/arijit.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="images/govinda.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="images/hritik.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="images/john.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="images/pawandeep.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- end right sidebar -->
-                <!-- ============================================================== -->
-            </div>
-            <!-- /.container-fluid -->
-            <footer class="footer text-center"> <!--2017 &copy; Ample Admin brought to you by themedesigner.in --></footer>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page Content -->
-        <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="js/jquery.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Menu Plugin JavaScript -->
-    <script src="js/sidebar-nav.min.js"></script>
-    <!--slimscroll JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
-    <!--Wave Effects -->
-    <script src="js/waves.js"></script>
-    <!--Morris JavaScript -->
-    <script src="js/raphael-min.js"></script>
-    <script src="js/morris.js"></script>
-    <!-- chartist chart -->
-    <script src="js/chartist.min.js"></script>
-    <script src="js/chartist-plugin-tooltip.min.js"></script>
-    <!-- Calendar JavaScript -->
-    <script src="js/moment.js"></script>
-    <script src="js/fullcalendar.min.js"></script>
-    <script src="js/cal-init.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="js/custom.min.js"></script>
-    <script src="js/dashboard1.js"></script>
-    <!-- Custom tab JavaScript -->
-    <script src="js/cbpFWTabs.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script type="text/javascript">
-    (function() {
-        [].slice.call(document.querySelectorAll('.sttabs')).forEach(function(el) {
-            new CBPFWTabs(el);
-        });
-    })();
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-    </script>
-    <script src="js/jquery.toast.js"></script>
-    <!--Style Switcher -->
-    <script src="js/jQuery.style.switcher.js"></script>
-</body>
+</div>
+<!--row -->
+<!-- /.row -->
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+        <div class="white-box">
+            <h3 class="box-title">RESULTS</h3><span class="label label-danger label-rounded pull-right">#7 (Comparators)</span>
+            <h4>Your practice achieved this standard of care for <strong>86% (318/370) of patients</strong>.</h4>
+            <ul class="list-inline text-right col-md-7 col-lg-7 col-sm-12 col-xs-12">
+                <li>
+                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Top quartile</h5>
+                </li>
+                <li>
+                    <h5><i class="fa fa-circle m-r-5 text-danger"></i>Your practice</h5>
+                </li>
+            </ul>
+            <img src="images/top-quartile.png" alt="Smiley face" height="285">
+            <span class="label label-danger label-rounded pull-right">#9 (Feedback in more than one way)</span>
+            <h4>This chart shows your performance in comparison with other general practices.</h4>
+        </div>
+    </div>
+    <!--<div class="col-md-6 col-sm-6 col-lg-3 col-xs-12">
+        <div class="bg-theme white-box m-b-0">
+            <ul class="expense-box">
+                <li><i class="wi wi-day-cloudy text-white"></i>
+                    <div>
+                        <h1 class="text-white m-b-0">35<sup>o</sup></h1>
+                        <h4 class="text-white">Clear and sunny</h4>
+                    </div>
+                </li>
+            </ul>
+            <div id="ct-weather" style="height: 120px"></div>
+            <ul class="dp-table text-white">
+                <li>05 AM</li>
+                <li>10 AM</li>
+                <li>03 PM</li>
+                <li>08 PM</li>
+            </ul>
+        </div>
+        <div class="white-box">
+            <div class="row">
+                <div class="col-xs-8">
+                    <h2 class="m-b-0 font-medium">Sunday</h2>
+                    <h5 class="text-muted m-t-0">March 2017</h5>
+                </div>
+                <div class="col-xs-4">
+                    <div class="circle circle-md bg-success pull-right m-t-10"><i class="wi wi-day-sunny"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>
+<!-- ============================================================== -->
+<!-- wallet, & manage users widgets -->
+<!-- ============================================================== -->
+<!-- .row -->
+<div class="row">
+    <!-- col-md-12 -->
+    <div class="col-md-12 col-lg-12">
+        <div class="manage-users">
+          <span class="label label-danger label-rounded pull-right">#12 (actionable messages/optional detail)</span>
+            <div class="sttabs tabs-style-iconbox">
+                <nav>
+                    <ul>
+                        <li title="All-cause mortality risk increases with increasing baseline levels of HbA1c" data-toggle="tooltip" data-placement="top"><a href="#section-iconbox-3" class="sticon ti-receipt"><span>Targets</span></a></li>
+                        <li title="People with type 2 diabetes and HbA1c level of 58mmol/mol or above" data-toggle="tooltip" data-placement="top"><a title="View Therapies for this patient" data-toggle="tooltip" data-placement="top" href="#section-iconbox-1" class="sticon ti-user"><span>Patients</span></a></li>
+                        <li title="Drug options for dual therapy if the HbA1c level is 58mmol/mol or above" data-toggle="tooltip" data-placement="top"><a href="#section-iconbox-2" class="sticon ti-lock"><span>Therapies</span></a></li>
+                    </ul>
+                </nav>
+                <div class="content-wrap">
+                  <section id="section-iconbox-3">
+                    <div class="p-20 row">
+                        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                            <h3 class="m-t-0">All-cause mortality risk increases with increasing baseline levels of HbA1c.</h3>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                            <a href="#section-iconbox-1" title="Needs to link to patient list" data-toggle="tooltip" data-placement="top" target="_blank" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">View at risk patients</a>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                          <ul class="dp-table m-t-30">
+                            <li style="display:block; text-align:left"><a href="" class="circle circle-md bg-warning di" data-toggle="tooltip" title="" data-original-title="More">48+</a> mmol/mol HbA1c levels risk for <strong>microvascular complications</strong> increases significantly</li></br>
+                            <li style="display:block; text-align:left"><a href="" class="circle circle-md bg-danger di" data-toggle="tooltip" title="" data-original-title="More">53+</a> mmol/mol HbA1c levels risk for <strong>mortality and macrovascular complications</strong> increases significantly</li>
+                          </ul>
+                        </div>
+                    </div>
+                  </section>
+                    <section id="section-iconbox-1">
+                      <div class="p-20 row">
+                            <div class="col-sm-12">
+                                <h3 class="m-t-0">People with type 2 diabetes and HbA1c level of 58mmol/mol or above</h3>
+                            </div>
+                        </div>
+                        <div class="table-responsive manage-table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>NHS Number</th>
+                                        <th>Last HbA1c level</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="advance-table-row">
+                                        <td><a href="#" title="View Therapies for this patient" data-toggle="tooltip" data-placement="top">Andrew Simons</a></td>
+                                        <td>434 897 2136</td>
+                                        <td>69</td>
+                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+                                          Patient details
+                                        </button></td>
+                                    </tr>
+                                    <tr class="advance-table-row">
+                                        <td><a href="#">Hanna Gover</a></td>
+                                        <td>434 765 3241</td>
+                                        <td>76</td>
+                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal2">
+                                          Patient details
+                                        </button></td>
+                                    </tr>
+                                    <tr class="advance-table-row">
+                                        <td><a href="#" title="View Therapies for this patient" data-toggle="tooltip" data-placement="top">Joshi Nirav</a></td>
+                                        <td>434 456 1101</td>
+                                        <td>72</td>
+                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal3">
+                                          Patient details
+                                        </button></td>
+                                    </tr>
+                                    <tr class="advance-table-row">
+                                        <td><a href="#" title="View Therapies for this patient" data-toggle="tooltip" data-placement="top">Joshi Sunil</a></td>
+                                        <td>434 456 1101</td>
+                                        <td>65</td>
+                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal4">
+                                          Patient details
+                                        </button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- ============================================================== -->
+                            <!-- Patient info modals -->
+                            <!-- ============================================================== -->
+                            <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Andrew Simons</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="images/patient-info.png" alt="patient info">
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-</html>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Hanna Gover</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="images/patient-info.png" alt="patient info">
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Joshi Nirav</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Joshi Sunil</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="images/patient-info.png" alt="patient info">
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal fade" id="Modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="images/patient-info.png" alt="patient info">
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="section-iconbox-2">
+                        <div class="p-20 row">
+                            <div class="col-sm-12">
+                                <h3 class="m-t-0">Drug options for dual therapy if the HbA1c level is 58mmol/mol or above</h3>
+                            </div>
+                        </div>
+                        <div class="table-responsive manage-table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Metformin combinations</th>
+                                        <th>Other (Metaformin intolerant/contraindicated)</th>
+                                        <th>No. of Patients</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="advance-table-row">
+                                        <td>Metformin plus a gliptin</td>
+                                        <td>A gliptin plus pioglitazone</td>
+                                        <td>1<a href="" title="Go to patient list">View patient(s)</a></td>
+                                    </tr>
+                                    <tr class="advance-table-row">
+                                        <td>Metformin plus pioglitazone</td>
+                                        <td>A gliptin plus a sulfonylurea</td>
+                                        <td>1<a href="" title="Go to patient list">View patient(s)</a></td>
+                                    </tr>
+                                    <tr class="advance-table-row">
+                                        <td>Metformin plus a sulfonylurea</td>
+                                        <td>Pioglitazone plus a sulfonylurea</td>
+                                        <td>2<a href="" title="Go to patient list">View patient(s)</a></td>
+                                    </tr>
+                                    <tr class="advance-table-row">
+                                        <td>Metformin plus a Sodium-glucose <br />co-transporter 2 inhibitor (SGLT-2i)</td>
+                                        <td>An SGLT-2i instead of a gliptin if  <br />a sulfonylurea or pioglitazone is not appropriate</td>
+                                        <td>1<a href="" title="Go to patient list">View patient(s)</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+                <!-- /content -->
+            </div>
+            <!-- /tabs -->
+        </div>
+    </div>
+    <!-- /col-md-12 -->
+</div>
+<!-- /.row -->
