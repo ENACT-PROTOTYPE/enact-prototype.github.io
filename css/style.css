@@ -17,6 +17,6 @@
 .tag{
     display:none;
 }
-.white-box:hover .tag{
+.div:hover .tag{
     display:inline-block;
 }
