@@ -20,3 +20,9 @@
 .div:hover .tag{
     display:inline-block;
 }
+body{
+    font-size:18px
+}
+table{
+    font-size: 14px
+}
