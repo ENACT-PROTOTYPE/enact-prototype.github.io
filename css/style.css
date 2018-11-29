@@ -14,10 +14,10 @@
 .col-in li.col-side {
     width: 95%;
 }
-.tag{
+.tag .label{
     display:none;
 }
-div:hover .tag{
+.tag:hover .label{
     display:inline-block;
 }
 body{
