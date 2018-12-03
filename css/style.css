@@ -80,3 +80,6 @@ table{
 .label-default {
     background-color: #777;
 }
+.lit-group-item .label{
+    font-sze:100%
+}
