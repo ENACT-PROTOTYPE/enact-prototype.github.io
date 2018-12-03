@@ -14,12 +14,12 @@
 .col-in li.col-side {
     width: 95%;
 }
-.tag .label{
+*/.tag .label{
     display:none;
 }
 .tag:hover .label{
     display:inline-block;
-}
+}*/
 body{
     font-size:18px
 }
