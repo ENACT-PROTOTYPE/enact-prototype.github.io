@@ -271,7 +271,48 @@ layout: default
                                     </button>
                                   </div>
                                   <div class="modal-body">
-                                    <img src="{{ site.baseurl }}/images/patient-info.png" alt="patient info">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Therapy Pathway</th>
+                                                <th>Date therapy prescribed</th>
+                                                <th>Single Therapy over 6 months?</th>
+                                                <th>Latest HbA1c Level</th>
+                                                <th>Date of Last HbA1c test</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="advance-table-row">
+                                                <td>(Treatments being taken)</td>
+                                                <td>(Date stamp)</td>
+                                                <td>(Y/N)</td>
+                                                <td>(test result)</td>
+                                                <td>(Date stamp)</td>
+                                            </tr>
+                                            <tr class="advance-table-row">
+                                                <td>Hanna Gover</td>
+                                                <td>434 765 3241</td>
+                                                <td>76</td>
+                                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal2">
+                                                  Patient details
+                                                </button></td>
+                                            </tr>
+                                            <tr class="advance-table-row">
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr class="advance-table-row">
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
